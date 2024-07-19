@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import { NextUIProvider } from "@nextui-org/react";
 import { Layout } from "@/components";
 import "./globals.css";
+// import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 

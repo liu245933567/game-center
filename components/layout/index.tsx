@@ -18,6 +18,8 @@ import { sectionItemsWithTeams } from "./sidebar-items";
 
 import Sidebar from "./sidebar";
 
+import { usePathname } from "next/navigation";
+
 /**
  * 💡 TIP: You can use the usePathname hook from Next.js App Router to get the current pathname
  * and use it as the active key for the Sidebar component.
@@ -36,6 +38,11 @@ export default function Component(props: { children: React.ReactNode }) {
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
+  const pathname = usePathname();
+
+  if (pathname === "/login" || pathname === "/signup") {
+    return <div className="flex h-dvw w-full">{children}</div>;
+  }
   return (
     <div className="flex h-dvh w-full">
       <Modal
