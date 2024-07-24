@@ -4,7 +4,8 @@ import { NextUIProvider } from "@nextui-org/react";
 import { Layout } from "@/components";
 import "./globals.css";
 // import { useRouter } from "next/navigation";
-import { usePathname } from "next/navigation";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
+import { ConfigProvider } from "antd";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,11 @@ export default function RootLayout({
     <html lang="zh-CN">
       <body className={inter.className}>
         <NextUIProvider>
-          <Layout>{children}</Layout>
+          <AntdRegistry>
+            <ConfigProvider>
+              <Layout>{children}</Layout>
+            </ConfigProvider>
+          </AntdRegistry>
         </NextUIProvider>
       </body>
     </html>

@@ -28,7 +28,7 @@ export default function Component() {
           className="flex flex-col gap-3"
           onSubmit={(e) => {
             e.preventDefault();
-            router.push("/");
+            router.replace("/");
           }}
         >
           <Input
